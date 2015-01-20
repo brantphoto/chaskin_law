@@ -1,0 +1,8 @@
+// This is the base style sheet. No actual styles shoud
+// go here. This is simply for importing external stylesheets.
+// Currently, we have a component based structure, but,
+// whatever makes sense here.
+
+// Partials From Front-Page Image Slider
+@import 'slider/animations';
+@import 'slider/slider-style';

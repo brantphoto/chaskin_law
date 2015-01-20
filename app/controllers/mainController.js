@@ -1,0 +1,6 @@
+app.controller('mainController', function(){
+  
+
+  
+
+});
