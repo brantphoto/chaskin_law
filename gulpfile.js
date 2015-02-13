@@ -141,6 +141,8 @@ gulp.task('watch', function(){
     
     // Watch Index, Angular, or Templates
     gulp.watch([
+        '!./app/assets/*.js',
+        '!./app/assets/**/*.js',
         './app/**/*.js',
         './app/**/**/*.js', 
         './app/views/*.html',
