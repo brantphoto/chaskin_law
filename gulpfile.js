@@ -127,13 +127,21 @@ gulp.task('get-js', function(){
 // ========================================
 gulp.task('watch', function(){  
     // Watch for any updates to a CSS or SCSS file
-    gulp.watch(['./app/assets/stylesheets/**/**/*.scss','./app/assets/stylesheets/**/**/*.css'],['sass']);
+    // these are stacked because gulp watch doesn't seem to respond to 
+    // changes if not explicitly called out.
+    gulp.watch(['./app/assets/stylesheets/**/**/**/*.scss','./app/assets/stylesheets/**/**/**/*.css'],['sass']);
+    gulp.watch(['./app/assets/stylesheets/**/**/*.scss','./app/assets/stylesheets/**/**/**/*.css'],['sass']);
+    gulp.watch(['./app/assets/stylesheets/**/*.scss','./app/assets/stylesheets/**/**/**/*.css'],['sass']);
+    gulp.watch(['./app/assets/stylesheets/*.scss','./app/assets/stylesheets/**/**/**/*.css'],['sass']);
 
     // Watch all non-NG JS 
     gulp.watch(['./app/assets/js/*.js'],['get-js']);
-
+    gulp.watch(['./app/assets/js/**/*.js'],['get-js']);
+    gulp.watch(['./app/assets/js/**/**/*.js'],['get-js']);
+    
     // Watch Index, Angular, or Templates
     gulp.watch([
+        './app/**/*.js',
         './app/**/**/*.js', 
         './app/views/*.html',
         './app/views/templates/**/*.html',
